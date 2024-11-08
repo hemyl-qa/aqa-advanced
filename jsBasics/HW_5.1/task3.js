@@ -10,6 +10,15 @@ let number = 4;
 
 for ( let i = 1; i<=10; i++) {
     let x;
-    x= number * i;
+    x = number * i;
     console.log(`${number} * ${i} = ${x}`)
+}
+
+let number1 =7;
+let count = 1;
+while (count <= 10) {
+    let y;
+    y = number1 * count;
+    console.log(`${number1} * ${count} = ${y}`)
+    count++;
 }
