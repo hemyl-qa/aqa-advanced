@@ -27,3 +27,25 @@ try {
 } finally {
     console.log('The task is completed');
 }
+
+console.log('--------------------------------------------------');
+
+try {
+    const result = divide(10, 0); 
+    console.log('Result', result);
+} catch (error) {
+    console.error('Error:', error.message);
+} finally {
+    console.log('The task is completed');
+}
+
+console.log('--------------------------------------------------');
+
+try {
+    const result = divide(10, 'test'); 
+    console.log('Result', result);
+} catch (error) {
+    console.error('Error:', error.message);
+} finally {
+    console.log('The task is completed');
+}
