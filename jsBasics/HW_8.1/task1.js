@@ -22,7 +22,7 @@ for (const number of numbers) {
     } else if (number === 0) {
         zeroCount = zeroCount + 1;
     }
-}
+};
 
 console.log(positiveCount);
 console.log(negativeCount);
