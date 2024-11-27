@@ -24,4 +24,7 @@ export class EBook extends Book {
             console.log(`Year set to: ${year}`);
         }
     }
+    static newEbook(book, fileFormat) {
+            return new EBook(book.title, book.author, book.year, fileFormat);
+            }
 }
