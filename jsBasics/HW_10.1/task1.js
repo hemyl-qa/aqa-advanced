@@ -39,3 +39,9 @@ console.log('--------------------------');
 
 console.log('Oldest book is:');
 oldBook.printInfo();
+
+console.log('--------------------------');
+
+const fileFormat = 'FB2';
+const newEbook = EBook.newEbook(book2, fileFormat);
+newEbook.printInfo();
