@@ -32,6 +32,9 @@ book3.printInfo();
 console.log('--------------------------');
 
 ebook1.printInfo();
+ebook1.title = 2;
+ebook1.author = 3;
+ebook1.fileFormat =4;
 ebook1.year = 19;
 ebook1.year = 2024; 
 

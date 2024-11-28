@@ -12,6 +12,42 @@ export class EBook extends Book {
         );
     }
 
+    get title() {
+        return this._title;
+    }
+
+    set title(title) {
+        if (typeof title !== 'string') {
+            console.log('Wrong title');
+        } else {
+            this._title = title;
+            console.log(`Title set to: ${title}`);
+        }
+    }
+    get author() {
+        return this._author;
+    }
+
+    set author(author) {
+        if (typeof author !== 'string') {
+            console.log('Wrong author');
+        } else {
+            this._author = author;
+            console.log(`Author set to: ${author}`);
+        }
+    }
+    get fileFormat() {
+        return this._fileFormat;
+    }
+
+    set fileFormat(fileFormat) {
+        if (typeof fileFormat !== 'string') {
+            console.log('Wrong File Format');
+        } else {
+            this._fileFormat = fileFormat;
+            console.log(`Author set to: ${fileFormat}`);
+        }
+    }
     get year() {
         return this._year;
     }
