@@ -1,2 +1,3 @@
+#!/bin/sh
 npm run eslint:all
 npm run prettier:fix
