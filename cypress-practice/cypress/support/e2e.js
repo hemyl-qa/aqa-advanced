@@ -15,3 +15,38 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+
+
+
+Cypress.Commands.overwrite('type', (originalFn, subject, text, options = {}) => {
+  
+    if (subject.attr('type') === 'password') {
+      Cypress.log({
+        name: 'type',
+        message: '*'.repeat(text.length),
+      });
+  
+      return originalFn(subject, text, { ...options, log: false });
+    }
+  
+    return originalFn(subject, text, options);
+  });
+
+
+  Cypress.Commands.add('login', (email, password) => {
+    cy.visit('/', {
+      auth: {
+        username: 'guest',
+        password: 'welcome2qauto',
+      },
+    });
+  
+    cy.get('button').contains('Sign In').click();
+  
+    cy.get('#signinEmail').type(email);
+    cy.get('#signinPassword').type(password, { sensitive: true });
+
+    cy.contains('Login').click();
+  
+    cy.url().should('eq', 'https://qauto.forstudy.space/panel/garage');
+  });
