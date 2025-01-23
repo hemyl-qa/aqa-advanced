@@ -14,7 +14,7 @@ describe('search elements', () => {
   
     it('Sign Up button', () => {
       cy.get('@SignUpButton').should('be.visible');
-    });
+     });
 
     const email = `hemyl.qa+${Date.now()}@gmail.com`;
     const password = 'Qwerty12345';
@@ -249,6 +249,16 @@ describe('search elements', () => {
     it('Login with existing account', () => {
       cy.login(email, password);
     });
+
+    it.only('test selectors', () => {
+      cy.get(selectorsLogin.emailField).type(email);
+      cy.get(selectorsLogin.passwordField).type(password, { sensitive: true });
+
+      cy.get(selectorsLogin.loginButton).click();
+  
+      cy.url().should('eq', 'https://qauto.forstudy.space/panel/garage');
+
+    })
 })
 
 
