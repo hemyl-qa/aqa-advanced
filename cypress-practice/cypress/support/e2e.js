@@ -43,10 +43,12 @@ Cypress.Commands.overwrite('type', (originalFn, subject, text, options = {}) => 
   
     cy.get('button').contains('Sign In').click();
   
-    cy.get('#signinEmail').type(email);
-    cy.get('#signinPassword').type(password, { sensitive: true });
+    cy.get(selectorsLogin.emailField).type(email);
+    cy.get(selectorsLogin.passwordField).type(password, { sensitive: true });
 
-    cy.contains('Login').click();
+    cy.get(selectorsLogin.loginButton).click();
   
     cy.url().should('eq', 'https://qauto.forstudy.space/panel/garage');
   });
+
+  
